@@ -112,7 +112,7 @@ app.post("/login-user" , async(req, res) =>{
         const token = jwt.sign({email: oldUser.email}, JWT_SECRET);
         
         if(res.status(201)){
-            return res.send({ status: 200, data: token, email: oldUser.email, first_name: oldUser.first_name, middle_name: oldUser.middle_name, last_name: oldUser.last_name, phone: oldUser.phone});
+            return res.send({ status: 200, data: token, email: oldUser.email, first_name: oldUser.first_name, middle_name: oldUser.middle_name, last_name: oldUser.last_name, phone: oldUser.phone, id: oldUser.id});
         }else{
             return res.send({ error: "error"});
         }
